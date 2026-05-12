@@ -34,7 +34,7 @@ export default function Sidebar({ activeTab, setActiveTab }) {
           {!collapsed && (
             <div>
               <div style={{ fontSize: 12, fontWeight: 600, color: '#fff', whiteSpace: 'nowrap' }}>Analytics Center</div>
-              <div style={{ fontSize: 10, color: '#4b5563', whiteSpace: 'nowrap' }}>Business Intelligence</div>
+              <div style={{ fontSize: 10, color: '#94a3b8', whiteSpace: 'nowrap' }}>Business Intelligence</div>
             </div>
           )}
         </div>
@@ -79,7 +79,7 @@ export default function Sidebar({ activeTab, setActiveTab }) {
             <UserButton afterSignOutUrl="/sign-in" />
             <div>
               <div style={{ fontSize: 11, color: '#e5e7eb', fontWeight: 500 }}>Brahma Teja</div>
-              <div style={{ fontSize: 10, color: '#4b5563' }}>Business Analyst</div>
+              <div style={{ fontSize: 10, color: '#94a3b8' }}>Business Analyst</div>
             </div>
           </div>
         ) : (

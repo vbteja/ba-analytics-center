@@ -85,8 +85,8 @@ nextjs-portal { display: none !important; }
 .ba-badge-purple { background: rgba(139,92,246,0.12); color: #a78bfa; border: 1px solid rgba(139,92,246,0.25); }
 
 .ba-section-title {
-  font-size: 10px;
-  color: #4b5563;
+  font-size: 11px;
+  color: #94a3b8;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   margin-bottom: 16px;
