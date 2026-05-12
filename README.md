@@ -118,11 +118,13 @@ Tracks actual revenue vs forecast with variance analysis and year-over-year comp
 ---
 
 ## Database schema
+```
 customers     → churn analysis (100 records)
 campaigns     → marketing ROI (12 campaigns)
 suppliers     → supply chain (15 suppliers)
 orders        → supply chain orders
 financials    → revenue forecast (24 months)
+```
 ---
 
 ## AI capabilities
@@ -144,36 +146,32 @@ Example questions you can ask:
 
 ## Running locally
 
-**Prerequisites:**
-- Node.js 18+
-- Accounts on Neon, Clerk, Upstash, Anthropic
+**Prerequisites:** Node.js 18+, accounts on Neon, Clerk, Upstash, Anthropic
 
-**Setup:**
+**1. Clone and install:**
 
-```bash
-# Clone the repo
-git clone https://github.com/vbteja/ba-analytics-center.git
-cd ba-analytics-center
+    git clone https://github.com/vbteja/ba-analytics-center.git
+    cd ba-analytics-center
+    npm install
 
-# Install dependencies
-npm install
+**2. Create `.env.local` with these variables:**
 
-# Add environment variables
-touch .env.local
-# Add all keys — see .env.example
-```
+    DATABASE_URL=your_neon_connection_string
+    NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key
+    CLERK_SECRET_KEY=your_clerk_secret_key
+    UPSTASH_REDIS_REST_URL=your_upstash_url
+    UPSTASH_REDIS_REST_TOKEN=your_upstash_token
+    ANTHROPIC_API_KEY=your_claude_api_key
+    NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
+    NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
+    NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL=/
+    NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=/
 
-**Environment variables needed:**
-DATABASE_URL=
-NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
-CLERK_SECRET_KEY=
-UPSTASH_REDIS_REST_URL=
-UPSTASH_REDIS_REST_TOKEN=
-ANTHROPIC_API_KEY=
-NEXT_PUBLIC_CLERK_SIGN_IN_URL=
-NEXT_PUBLIC_CLERK_SIGN_UP_URL=
-NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL=
-NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=
+**3. Set up database and run:**
+
+    npx drizzle-kit push
+    node --env-file=.env.local lib/seed.js
+    npm run dev
 ```bash
 # Push database schema
 npx drizzle-kit push
@@ -188,6 +186,7 @@ npm run dev
 ---
 
 ## Project structure
+```
 ba-analytics-center/
 ├── app/
 │   ├── api/
@@ -210,6 +209,7 @@ ba-analytics-center/
 │   ├── schema.js
 │   └── seed.js
 └── drizzle.config.js
+```
 ---
 
 ## BA skills showcased
