@@ -118,3 +118,119 @@ Tracks actual revenue vs forecast with variance analysis and year-over-year comp
 ---
 
 ## Database schema
+customers     → churn analysis (100 records)
+campaigns     → marketing ROI (12 campaigns)
+suppliers     → supply chain (15 suppliers)
+orders        → supply chain orders
+financials    → revenue forecast (24 months)
+---
+
+## AI capabilities
+
+Each module has a dedicated AI analyst powered by Claude. The AI:
+
+- Reads all live data from the database in real time
+- Calculates key metrics before sending to Claude
+- Answers specific questions with data-driven recommendations
+- Provides actionable insights not just observations
+
+Example questions you can ask:
+- "Which customer segment has highest churn risk and why?"
+- "Which marketing channel should I increase budget for?"
+- "Which suppliers pose the biggest delivery risk?"
+- "Will we hit our annual revenue target?"
+
+---
+
+## Running locally
+
+**Prerequisites:**
+- Node.js 18+
+- Accounts on Neon, Clerk, Upstash, Anthropic
+
+**Setup:**
+
+```bash
+# Clone the repo
+git clone https://github.com/vbteja/ba-analytics-center.git
+cd ba-analytics-center
+
+# Install dependencies
+npm install
+
+# Add environment variables
+touch .env.local
+# Add all keys — see .env.example
+```
+
+**Environment variables needed:**
+DATABASE_URL=
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
+CLERK_SECRET_KEY=
+UPSTASH_REDIS_REST_URL=
+UPSTASH_REDIS_REST_TOKEN=
+ANTHROPIC_API_KEY=
+NEXT_PUBLIC_CLERK_SIGN_IN_URL=
+NEXT_PUBLIC_CLERK_SIGN_UP_URL=
+NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL=
+NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=
+```bash
+# Push database schema
+npx drizzle-kit push
+
+# Seed the database
+node --env-file=.env.local lib/seed.js
+
+# Run the dev server
+npm run dev
+```
+
+---
+
+## Project structure
+ba-analytics-center/
+├── app/
+│   ├── api/
+│   │   ├── churn/route.js
+│   │   ├── marketing/route.js
+│   │   ├── supply-chain/route.js
+│   │   ├── financials/route.js
+│   │   └── ai/route.js
+│   ├── sign-in/
+│   ├── sign-up/
+│   ├── page.js
+│   ├── layout.js
+│   └── globals.css
+├── components/
+│   ├── Sidebar.js
+│   ├── Filters.js
+│   └── ExportButton.js
+├── lib/
+│   ├── db.js
+│   ├── schema.js
+│   └── seed.js
+└── drizzle.config.js
+---
+
+## BA skills showcased
+
+This project demonstrates the full BA skill set:
+
+- **Requirements analysis** — structured data models reflecting real business needs
+- **Data analysis** — churn rates, ROI calculations, variance analysis, supplier scoring
+- **Process thinking** — supply chain efficiency, marketing funnel analysis
+- **Stakeholder communication** — clean dashboards designed for executive review
+- **Technical fluency** — full stack deployment, SQL schema design, API integration
+- **AI literacy** — Claude API integration for augmented analysis
+
+---
+
+## About
+
+Built by **Brahma Teja** — Product & Project Manager / Business Analyst with 4+ years 
+of experience in Tech and FinTech environments.
+
+- 🌐 [PM Command Center](https://your-pm-vercel-url.vercel.app)
+- 💼 [LinkedIn](https://linkedin.com/in/brahma-teja-69b91a185)
+- 🐙 [GitHub](https://github.com/vbteja)
+- 📧 brahma.tej19@gmail.com
