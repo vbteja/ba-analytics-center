@@ -402,9 +402,9 @@ export default function Home() {
                 { label: 'Filtered customers', value: filteredChurn.length, sub: 'Matching filters', color: '#3b82f6', glow: 'glow-blue' },
               ].map((m, i) => (
                 <div key={i} className={`ba-metric ${m.glow}`}>
-                  <div style={{ fontSize: 10, color: '#64748b', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: 12 }}>{m.label}</div>
+                  <div style={{ fontSize: 10, color: '#94a3b8', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: 12 }}>{m.label}</div>
                   <div style={{ fontSize: 32, fontWeight: 700, color: m.color, marginBottom: 4, lineHeight: 1 }}>{m.value}</div>
-                  <div style={{ fontSize: 11, color: '#475569' }}>{m.sub}</div>
+                  <div style={{ fontSize: 11, color: '#94a3b8' }}>{m.sub}</div>
                 </div>
               ))}
             </div>
@@ -432,7 +432,7 @@ export default function Home() {
                   <thead>
                     <tr style={{ borderBottom: '1px solid #1a1a1a' }}>
                       {['Customer','Segment','Tenure','Monthly Spend','Support Tickets','Last Login','Risk','Status'].map(h => (
-                        <th key={h} style={{ padding: '8px 12px', textAlign: 'left', color: '#64748b', fontWeight: 500, fontSize: 10, textTransform: 'uppercase' }}>{h}</th>
+                        <th key={h} style={{ padding: '8px 12px', textAlign: 'left', color: '#94a3b8', fontWeight: 500, fontSize: 10, textTransform: 'uppercase' }}>{h}</th>
                       ))}
                     </tr>
                   </thead>
@@ -471,9 +471,9 @@ export default function Home() {
                 { label: 'Conversions', value: totalConversions.toLocaleString(), sub: 'Total leads generated', color: '#8b5cf6', glow: 'glow-blue' },
               ].map((m, i) => (
                 <div key={i} className={`ba-metric ${m.glow}`}>
-                  <div style={{ fontSize: 10, color: '#64748b', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: 12 }}>{m.label}</div>
+                  <div style={{ fontSize: 10, color: '#94a3b8', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: 12 }}>{m.label}</div>
                   <div style={{ fontSize: 32, fontWeight: 700, color: m.color, marginBottom: 4, lineHeight: 1 }}>{m.value}</div>
-                  <div style={{ fontSize: 11, color: '#475569' }}>{m.sub}</div>
+                  <div style={{ fontSize: 11, color: '#94a3b8' }}>{m.sub}</div>
                 </div>
               ))}
             </div>
@@ -500,7 +500,7 @@ export default function Home() {
                   <thead>
                     <tr style={{ borderBottom: '1px solid #1a1a1a' }}>
                       {['Campaign','Channel','Spend','Revenue','ROI','Conversions','CPA','Status'].map(h => (
-                        <th key={h} style={{ padding: '8px 12px', textAlign: 'left', color: '#64748b', fontWeight: 500, fontSize: 10, textTransform: 'uppercase' }}>{h}</th>
+                        <th key={h} style={{ padding: '8px 12px', textAlign: 'left', color: '#94a3b8', fontWeight: 500, fontSize: 10, textTransform: 'uppercase' }}>{h}</th>
                       ))}
                     </tr>
                   </thead>
@@ -543,9 +543,9 @@ export default function Home() {
                 { label: 'Critical', value: criticalSuppliers.length, sub: 'Immediate action needed', color: '#ef4444', glow: 'glow-red' },
               ].map((m, i) => (
                 <div key={i} className={`ba-metric ${m.glow}`}>
-                  <div style={{ fontSize: 10, color: '#64748b', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: 12 }}>{m.label}</div>
+                  <div style={{ fontSize: 10, color: '#94a3b8', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: 12 }}>{m.label}</div>
                   <div style={{ fontSize: 32, fontWeight: 700, color: m.color, marginBottom: 4, lineHeight: 1 }}>{m.value}</div>
-                  <div style={{ fontSize: 11, color: '#475569' }}>{m.sub}</div>
+                  <div style={{ fontSize: 11, color: '#94a3b8' }}>{m.sub}</div>
                 </div>
               ))}
             </div>
@@ -566,7 +566,7 @@ export default function Home() {
                   <thead>
                     <tr style={{ borderBottom: '1px solid #1a1a1a' }}>
                       {['Supplier','Category','Country','On-Time %','Quality','Lead Days','Cost Var %','Defect %','Status'].map(h => (
-                        <th key={h} style={{ padding: '8px 12px', textAlign: 'left', color: '#64748b', fontWeight: 500, fontSize: 10, textTransform: 'uppercase' }}>{h}</th>
+                        <th key={h} style={{ padding: '8px 12px', textAlign: 'left', color: '#94a3b8', fontWeight: 500, fontSize: 10, textTransform: 'uppercase' }}>{h}</th>
                       ))}
                     </tr>
                   </thead>
@@ -606,9 +606,9 @@ export default function Home() {
                 { label: 'Latest month', value: `$${(Number(latestActual?.revenue_actual || 0)/1000).toFixed(0)}K`, sub: `${latestActual?.month || ''} ${latestActual?.year || ''}`, color: '#8b5cf6', glow: 'glow-blue' },
               ].map((m, i) => (
                 <div key={i} className={`ba-metric ${m.glow}`}>
-                  <div style={{ fontSize: 10, color: '#64748b', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: 12 }}>{m.label}</div>
+                  <div style={{ fontSize: 10, color: '#94a3b8', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: 12 }}>{m.label}</div>
                   <div style={{ fontSize: 32, fontWeight: 700, color: m.color, marginBottom: 4, lineHeight: 1 }}>{m.value}</div>
-                  <div style={{ fontSize: 11, color: '#475569' }}>{m.sub}</div>
+                  <div style={{ fontSize: 11, color: '#94a3b8' }}>{m.sub}</div>
                 </div>
               ))}
             </div>
@@ -627,7 +627,7 @@ export default function Home() {
                   <thead>
                     <tr style={{ borderBottom: '1px solid #1a1a1a' }}>
                       {['Month','Revenue Actual','Revenue Forecast','Variance','Expenses','Profit','Status'].map(h => (
-                        <th key={h} style={{ padding: '8px 12px', textAlign: 'left', color: '#64748b', fontWeight: 500, fontSize: 10, textTransform: 'uppercase' }}>{h}</th>
+                        <th key={h} style={{ padding: '8px 12px', textAlign: 'left', color: '#94a3b8', fontWeight: 500, fontSize: 10, textTransform: 'uppercase' }}>{h}</th>
                       ))}
                     </tr>
                   </thead>

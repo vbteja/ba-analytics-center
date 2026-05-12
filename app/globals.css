@@ -35,7 +35,9 @@ nextjs-portal { display: none !important; }
   position: relative;
   overflow: hidden;
 }
-
+.ba-metric .sub-text {
+  color: #94a3b8 !important;
+}
 .ba-metric::before {
   content: '';
   position: absolute;
