@@ -359,11 +359,11 @@ export default function Home() {
   )
 
   return (
-    <div style={{ display: 'flex', minHeight: '100vh', background: '#060606', color: '#e5e7eb', fontFamily: '-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif' }}>
+    <div style={{ display: 'flex', minHeight: '100vh', background: '#060606', color: '#e5e7eb', fontFamily: '-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif', position: 'relative' }}>
 
       <Sidebar activeTab={activeTab} setActiveTab={setActiveTab} />
 
-      <div style={{ flex: 1, padding: '28px 32px', overflowY: 'auto' }}>
+      <div style={{ flex: 1, padding: 'clamp(16px, 3vw, 32px)', overflowY: 'auto', minWidth: 0 }}>
 
         {/* Page header */}
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 20 }}>
@@ -394,7 +394,7 @@ export default function Home() {
         {/* CUSTOMER CHURN */}
         {activeTab === 'churn' && (
           <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 12 }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 12 }}>
               {[
                 { label: 'Churn rate', value: `${churnRate}%`, sub: `${churned.length} customers lost`, color: '#ef4444', glow: 'glow-red' },
                 { label: 'High risk', value: highRisk.length, sub: 'Need immediate action', color: '#f59e0b', glow: 'glow-amber' },
@@ -408,7 +408,7 @@ export default function Home() {
                 </div>
               ))}
             </div>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 16 }}>
               <div className="ba-card">
                 <div className="ba-section-title">Churn rate by segment</div>
                 <ReactECharts option={churnSegmentChart} style={{ height: 220 }} />
@@ -463,7 +463,7 @@ export default function Home() {
         {/* MARKETING ROI */}
         {activeTab === 'marketing' && (
           <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 12 }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 12 }}>
               {[
                 { label: 'Overall ROI', value: `${totalROI}%`, sub: 'Across filtered campaigns', color: '#10b981', glow: 'glow-green' },
                 { label: 'Total revenue', value: `$${(totalRevenue/1000).toFixed(0)}K`, sub: 'From filtered campaigns', color: '#3b82f6', glow: 'glow-blue' },
@@ -477,7 +477,7 @@ export default function Home() {
                 </div>
               ))}
             </div>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 16 }}>
               <div className="ba-card">
                 <div className="ba-section-title">ROI by channel</div>
                 <ReactECharts option={roiChart} style={{ height: 220 }} />
@@ -535,7 +535,7 @@ export default function Home() {
         {/* SUPPLY CHAIN */}
         {activeTab === 'supply' && (
           <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 12 }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 12 }}>
               {[
                 { label: 'Avg on-time delivery', value: `${avgDelivery}%`, sub: 'Across filtered suppliers', color: '#10b981', glow: 'glow-green' },
                 { label: 'Total suppliers', value: filteredSupply.length, sub: 'Active relationships', color: '#3b82f6', glow: 'glow-blue' },
@@ -549,7 +549,7 @@ export default function Home() {
                 </div>
               ))}
             </div>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 16 }}>
               <div className="ba-card">
                 <div className="ba-section-title">On-time delivery performance</div>
                 <ReactECharts option={deliveryChart} style={{ height: 320 }} />
@@ -598,7 +598,7 @@ export default function Home() {
         {/* FINANCIAL FORECAST */}
         {activeTab === 'financial' && (
           <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 12 }}>
+            <<div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 12 }}>
               {[
                 { label: 'YTD Revenue 2025', value: `$${(ytdRevenue/1e6).toFixed(2)}M`, sub: 'Actual to date', color: '#10b981', glow: 'glow-green' },
                 { label: 'YTD Forecast', value: `$${(ytdForecast/1e6).toFixed(2)}M`, sub: 'Expected to date', color: '#3b82f6', glow: 'glow-blue' },

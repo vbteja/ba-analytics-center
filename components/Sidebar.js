@@ -26,6 +26,7 @@ export default function Sidebar({ activeTab, setActiveTab }) {
       top: 0,
       height: '100vh',
       overflow: 'hidden',
+      zIndex: 50,
     }}>
       {/* Logo */}
       <div style={{ padding: '20px 16px', borderBottom: '1px solid #161616', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>

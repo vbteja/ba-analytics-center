@@ -129,3 +129,35 @@ nextjs-portal { display: none !important; }
   0%, 100% { transform: translateY(0) }
   50% { transform: translateY(-5px) }
 }
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .sidebar-collapse {
+    display: none;
+  }
+
+  .main-content {
+    padding: 16px !important;
+  }
+
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .grid-2 {
+    grid-template-columns: 1fr !important;
+  }
+
+  .ba-card {
+    padding: 14px 16px;
+  }
+
+  .ba-metric {
+    padding: 14px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .grid-4 {
+    grid-template-columns: 1fr 1fr !important;
+  }
+}
